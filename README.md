@@ -2,15 +2,14 @@ pydes
 =====
 
 Basic but pure DES implementation in Python
-I have written it for fun because it is really interesting to understand how an algorithm works in deep and there is nothing
-else better than writting it.
+I have written it for fun because nothing else.
 
 
 How it works ?
 --------------
 
 Everything is made within a class called "des". This class can be instanciated once and used to cipher and decipher multiple datas.
-It also support padding using the PKCS5 specification. (So the data is padding even if it is multiple of 8 to be sure that the last byte il be padding data.
+It also support padding using the PKCS5 specification. (So the data is padding even if it is multiple of 8 to be sure that the last byte il be padding data).
 The generation of all the keys used is made in the method generatekeys and substitute apply the SBOX permutation.
 The main method is run which is called by both encrypt and decrypt but in a different mode. This method do basically all the stuff, it loop
 throught all the blocks and for each do the 16th rounds.
