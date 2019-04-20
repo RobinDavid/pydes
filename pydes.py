@@ -117,7 +117,7 @@ def string_to_bit_array(text):#Convert a string into a list of bits
     return array
 
 def bit_array_to_string(array): #Recreate the string from the bit array
-    res = ''.join([chr(int(y,2)) for y in [''.join([str(x) for x in bytes]) for bytes in  nsplit(array,8)]])   
+    res = ''.join([chr(int(y,2)) for y in [''.join([str(x) for x in _bytes]) for _bytes in  nsplit(array,8)]])   
     return res
 
 def binvalue(val, bitsize): #Return the binary value as a string of the given size 
@@ -129,7 +129,7 @@ def binvalue(val, bitsize): #Return the binary value as a string of the given si
     return binval
 
 def nsplit(s, n):#Split a list into sublists of size "n"
-    return [s[k:k+n] for k in xrange(0, len(s), n)]
+    return [s[k:k+n] for k in range(0, len(s), n)]
 
 ENCRYPT=1
 DECRYPT=0
@@ -234,5 +234,5 @@ if __name__ == '__main__':
     d = des()
     r = d.encrypt(key,text)
     r2 = d.decrypt(key,r)
-    print "Ciphered: %r" % r
-    print "Deciphered: ", r2
+    print("Ciphered: %r" % r)
+    print("Deciphered: ", r2)
